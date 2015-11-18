@@ -1,3 +1,7 @@
+<?php
+$imgBasePath = 'assets/img/';
+$members = json_decode(file_get_contents('data/data.json'))->members;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,10 +12,11 @@
         <title>Stupid Title</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Popper CSS -->
+        <link href="assets/jquery-popper/dist/popper.css" rel="stylesheet">
         <!-- Custom styles for this template -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -22,7 +27,7 @@
 
     <body>
 
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top php-nav">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -35,8 +40,8 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Hên xui</a></li>
-                        <li><a href="#about">Thống kê</a></li>
+                        <li class="active"><a href="#pop">Hên xui</a></li>
+                        <li><a href="#stats">Thống kê</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -44,14 +49,16 @@
 
         <div class="container">
             <div id="pop">
-                <a href="#" data-primary></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
+                <a href="#" data-primary>Chuẩn bị !</a>
+                <?php foreach ($members as $member):?>
+                <a href="#">
+                    <img src="<?php echo $imgBasePath . $member->avatar?>" class="img-circle"/>
+                </a>
+                <?php endforeach;?>
+            </div>
+            
+            <div id="stats">
+                
             </div>
         </div><!-- /.container -->
 
@@ -60,6 +67,9 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script src="assets/jquery-popper/dist/popper.js"></script>
+        <script src="assets/js/main.js"></script>
     </body>
 </html>

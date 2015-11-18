@@ -1,0 +1,25 @@
+body { background-color:#ECF0F1;}
+#pop {
+  margin: 300px auto;
+  display: block;
+  width: 75px;
+  height: 75px;
+}
+
+#pop .primary {
+  background-image: url(share.jpg);
+  background-size: contain;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  margin: auto;
+  display: block;
+}
+
+#pop .secondary {
+  background-image: url(twitter.png);
+  background-size: contain;
+  height: 35px;
+  width: 35px;
+  display: block;
+}

@@ -1,0 +1,52 @@
+body {
+    padding-top: 50px;
+    font-family: "Fira Sans", "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+.php-nav.navbar-inverse {
+    border-color: #4F5B93 !important;
+    background: #8892BF;
+    box-shadow: 0 .25em .25em rgba(0,0,0,.1);
+    border-bottom: .25rem solid;
+}
+.php-nav.navbar-inverse .navbar-nav>.active>a {
+    background: #4F5B93;
+}
+.php-nav.navbar-inverse .navbar-brand, .php-nav.navbar-inverse .navbar-nav>li>a, #pop .primary {
+    color: #E2E4EF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.php-nav.navbar-inverse .navbar-brand:hover, .php-nav.navbar-inverse .navbar-nav>li>a:hover, #pop .primary:hover {
+    color: #fff;
+}
+#pop {
+    width: 150px;
+    height: 150px;
+    margin: 200px auto 0;
+}
+#pop .primary {
+    background-color: #8892BF;
+    background-size: contain;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    line-height: 150px;
+    text-decoration: none;
+    color: #E2E4EF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+#pop .secondary {
+    background: transparent;
+    background-size: contain;
+    height: 64px;
+    width: 64px;
+    display: block;
+}
+
+#pop .secondary img {
+    height: 64px;
+    width: 64px;
+    border: 2px solid #4F5B93;
+}
