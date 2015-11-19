@@ -9,7 +9,7 @@ $members = json_decode(file_get_contents('data/data.json'))->members;
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Stupid Title</title>
+        <title>Bê nước SD2</title>
 
         <!-- Bootstrap core CSS -->
         <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@ $members = json_decode(file_get_contents('data/data.json'))->members;
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Bê nước</a>
+                    <a class="navbar-brand" href="#">Bê nước v0.0</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -58,7 +58,27 @@ $members = json_decode(file_get_contents('data/data.json'))->members;
             </div>
             
             <div id="stats">
-                
+                <h2>Thống kê</h2>
+                <div class="table-responsive">          
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Đồng chí</th>
+                                <th>Số lần bê nước</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($members as $key => $member):?>
+                            <tr class="row-member <?php if ($key%2):?>info<?php else:?>success<?php endif?>">
+                                <td><?php echo $key + 1?></td>
+                                <td class="cell-name"><?php echo $member->name?></td>
+                                <td class="cell-times"><?php echo $member->times?></td>
+                            </tr>
+                            <?php endforeach;?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div><!-- /.container -->
 

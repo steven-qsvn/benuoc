@@ -6,7 +6,7 @@ $randomKey = rand(0, count($members));
 // We update the statistics
 $members[$randomKey]->times++;
 // And the put updated info into JSON file
-//file_put_contents('data/data.json', json_encode(array('members' => $members)));
+file_put_contents('data/data.json', json_encode(array('members' => $members)));
 
 echo json_encode(array('data' => array(
     'key' => $randomKey,

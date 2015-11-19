@@ -44,9 +44,17 @@ body {
     width: 64px;
     display: block;
 }
-
+#pop .primary img {
+    height: 150px;
+    width: 150px;
+    border: 2px solid #4F5B93;
+}
 #pop .secondary img {
     height: 64px;
     width: 64px;
     border: 2px solid #4F5B93;
+}
+
+#stats {
+    margin-top: 200px;
 }

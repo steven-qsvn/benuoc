@@ -79,7 +79,12 @@
     };
 
     Popper.prototype.primaryClicked = function () {
+        if (this.element.hasClass('runned')) {
+            return false;
+        }
+        
         if (this.element.hasClass('popped')) {
+            this.element.addClass('runned');
 //      this.hidePoppers();
             $.ajax({
                 url: 'ajax.php',
@@ -100,8 +105,8 @@
                     
                     // Start a new interval
                     var secondInterval = setInterval(function () {
-                        // Randomize a value to end this interval from 20 to 24
-                        var secondRandomEndInterval = Math.floor((Math.random() * 5) + 20);
+                        // Randomize a value to end this interval from 30 to 34
+                        var secondRandomEndInterval = Math.floor((Math.random() * 5) + 30);
                         intervalRunTimes = $.runInterval();
                         if (intervalRunTimes !== undefined && (intervalRunTimes === secondRandomEndInterval || intervalRunTimes > 24)) {
                             clearInterval(secondInterval);
@@ -125,14 +130,17 @@
                                             
                                             // End everything here
                                             var serverRandomKey = $.data(document.body, 'serverRandomKey');
-                                            console.log(serverRandomKey);
                                             setTimeout(function() {
-                                                $('.secondary').css('opacity', 1);
-                                                $('.secondary').eq(serverRandomKey).css('opacity', 0.5).find('img').css('border-color', 'red');
+                                                $.runEffect(serverRandomKey);
+                                                
+                                                // Update the statistic
+                                                var currentTimesCell = $('.row-member').eq(serverRandomKey).find('.cell-times');
+                                                var currentTimes = parseInt(currentTimesCell.text());
+                                                currentTimesCell.text(currentTimes + 1);
                                             }, 1000);
                                         }
 
-                                    }, 600);
+                                    }, 500);
                                 }
 
                             }, 300);
@@ -151,8 +159,8 @@
         // Randomize a key in the list 
         var randomKey = Math.floor((Math.random() * 12));
         
-        $('.secondary').css('opacity', 1).find('img').css('border-color', '#4F5B93');
-        $('.secondary').eq(randomKey).css('opacity', 0.5).find('img').css('border-color', 'red');
+        $.runEffect(randomKey);
+        
         // Initialize the run times of this interval
         if (intervalRunTimes === undefined) {
             intervalRunTimes = 0;
@@ -162,6 +170,14 @@
         
         return intervalRunTimes;
     };
+    
+    $.runEffect = function(key) {
+        $('.secondary').css('opacity', 1).find('img').css('border-color', '#4F5B93');
+        var randomElement = $('.secondary').eq(key);
+        randomElement.css('opacity', 0.5).find('img').css('border-color', 'red');
+        var imgSrc = randomElement.find('img').attr('src');
+        $('.primary').html('<img src="' + imgSrc + '" class="img-circle">');
+    }
     
     $.fn.popper = function (options) {
         return this.each(function () {
