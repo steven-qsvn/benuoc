@@ -1,6 +1,20 @@
 <?php
 $imgBasePath = 'assets/img/';
 $members = json_decode(file_get_contents('data/data.json'))->members;
+
+if (isset($_POST['password'])) {
+    if ($_POST['password'] == 'becaideogi') {
+        foreach ($members as &$member) {
+            $member->times = 0;
+        }
+        
+        // And the put updated info into JSON file
+        file_put_contents('data/data.json', json_encode(array('members' => $members)));
+    }
+} 
+else {
+    
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +50,7 @@ $members = json_decode(file_get_contents('data/data.json'))->members;
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Bê nước v0.0</a>
+                    <h1 class="navbar-brand" href="#">Bê nước v0.0</h1>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -78,10 +92,30 @@ $members = json_decode(file_get_contents('data/data.json'))->members;
                             <?php endforeach;?>
                         </tbody>
                     </table>
+                    <button type="button" class="btn btn-danger pull-right" data-toggle="modal" data-target="#myModal">Reset!</button>
                 </div>
             </div>
         </div><!-- /.container -->
-
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <form id="reset-form" method="post" action="">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="password" class="form-control reset-password" placeholder="Password" name="password">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Do it!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->
