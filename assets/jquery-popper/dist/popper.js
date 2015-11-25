@@ -157,7 +157,7 @@
     $.runInterval = function () {
         var intervalRunTimes = $.data(document.body, 'intervalRunTimes');
         // Randomize a key in the list 
-        var randomKey = Math.floor((Math.random() * 12));
+        var randomKey = Math.floor((Math.random() * 11));
         
         $.runEffect(randomKey);
         
@@ -177,7 +177,7 @@
         randomElement.css('opacity', 0.5).find('img').css('border-color', 'red');
         var imgSrc = randomElement.find('img').attr('src');
         $('.primary').html('<img src="' + imgSrc + '" class="img-circle">');
-    }
+    };
     
     $.fn.popper = function (options) {
         return this.each(function () {
