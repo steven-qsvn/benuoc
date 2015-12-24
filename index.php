@@ -125,6 +125,6 @@ else {
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <script src="assets/jquery-popper/dist/popper.js"></script>
         <script src="assets/js/main.js"></script>
-        
+        <script type="text/javascript" src="assets/js/snow.js"></script>
     </body>
 </html>
