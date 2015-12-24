@@ -2,4 +2,4 @@
 
 ##### Công cụ hỗ trợ bê nước - công bằng - dân chủ - văn minh
 
-![alt tag](http://prntscr.com/9hz4ww)
+![alt tag](https://raw.githubusercontent.com/hongviet119/benuoc/master/assets/img/Screenshot_app.png)
