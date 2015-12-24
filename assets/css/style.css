@@ -7,7 +7,8 @@ h1.navbar-brand {
 }
 .php-nav.navbar-inverse {
     border-color: #4F5B93 !important;
-    background: #8892BF;
+   /* background: #8892BF;*/
+    background: #FF4949;
     box-shadow: 0 .25em .25em rgba(0,0,0,.1);
     border-bottom: .25rem solid;
 }
@@ -26,18 +27,27 @@ h1.navbar-brand {
     height: 150px;
     margin: 200px auto 0;
 }
+h2 {
+    color: white;
+}
+table thead {
+    color: white;
+}
 #pop .primary {
-    background-color: #8892BF;
+   /* background-color: #8892BF;*/
+  background: url('../img/111.png');
     background-size: contain;
     border-radius: 50%;
     width: 150px;
     height: 150px;
     margin: auto;
     display: block;
+    font-size: 20px;
     text-align: center;
     line-height: 150px;
     text-decoration: none;
-    color: #E2E4EF;
+    color: #000000;
+    font-weight: bold;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 #pop .secondary {

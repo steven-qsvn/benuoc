@@ -39,7 +39,7 @@ else {
         <![endif]-->
     </head>
 
-    <body>
+    <body  style="background:url('assets/img/snow.jpg');">
 
         <nav class="navbar navbar-inverse navbar-fixed-top php-nav">
             <div class="container">
@@ -125,5 +125,6 @@ else {
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <script src="assets/jquery-popper/dist/popper.js"></script>
         <script src="assets/js/main.js"></script>
+        
     </body>
 </html>
